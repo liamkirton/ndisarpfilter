@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NdisArpFilterCtrl", "NdisArpFilterCtrl\NdisArpFilterCtrl.vcproj", "{E8F80BFE-7C88-42DC-8A1A-15938EC23907}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NdisArpFilter", "NdisArpFilter\NdisArpFilter.vcproj", "{7737A4A5-1406-4E10-9283-9FB58D59DE72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8F80BFE-7C88-42DC-8A1A-15938EC23907}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E8F80BFE-7C88-42DC-8A1A-15938EC23907}.Debug|Win32.Build.0 = Debug|Win32
+		{E8F80BFE-7C88-42DC-8A1A-15938EC23907}.Release|Win32.ActiveCfg = Release|Win32
+		{E8F80BFE-7C88-42DC-8A1A-15938EC23907}.Release|Win32.Build.0 = Release|Win32
+		{7737A4A5-1406-4E10-9283-9FB58D59DE72}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7737A4A5-1406-4E10-9283-9FB58D59DE72}.Debug|Win32.Build.0 = Debug|Win32
+		{7737A4A5-1406-4E10-9283-9FB58D59DE72}.Release|Win32.ActiveCfg = Release|Win32
+		{7737A4A5-1406-4E10-9283-9FB58D59DE72}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

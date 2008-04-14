@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="NdisArpFilter"
+	ProjectGUID="{7737A4A5-1406-4E10-9283-9FB58D59DE72}"
+	RootNamespace="NdisArpFilter"
+	Keyword="MakeFileProj"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="C:\Libraries\Microsoft\DDKs\ddkbuild.cmd -WXP chk ."
+				ReBuildCommandLine="C:\Libraries\Microsoft\DDKs\ddkbuild.cmd -WXP chk . -cZ"
+				CleanCommandLine=""
+				Output="NdisArpFilterDrv.sys"
+				PreprocessorDefinitions="WIN32;_DEBUG;NDIS_MINIPORT_DRIVER;NDIS_WDM;NDIS51;NDIS51_MINIPORT;NDIS_MINIPORT_MAJOR_VERSION=5;NDIS_MINIPORT_MINOR_VERSION=1"
+				IncludeSearchPath="C:\Libraries\Microsoft\DDKs\Windows\v6.0\inc\api;C:\Libraries\Microsoft\DDKs\Windows\v6.0\inc\crt;C:\Libraries\Microsoft\DDKs\Windows\v6.0\inc\ddk"
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="C:\Libraries\Microsoft\DDKs\ddkbuild.cmd -WXP free ."
+				ReBuildCommandLine="C:\Libraries\Microsoft\DDKs\ddkbuild.cmd -WXP free . -cZ"
+				CleanCommandLine=""
+				Output="NdisArpFilterDrv.sys"
+				PreprocessorDefinitions="WIN32;NDEBUG;NDIS_MINIPORT_DRIVER;NDIS_WDM;NDIS51;NDIS51_MINIPORT"
+				IncludeSearchPath="C:\Libraries\Microsoft\DDKs\Windows\v6.0\inc\api;C:\Libraries\Microsoft\DDKs\Windows\v6.0\inc\crt;C:\Libraries\Microsoft\DDKs\Windows\v6.0\inc\ddk"
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
+			<File
+				RelativePath=".\NdisArpFilter.c"
+				>
+			</File>
+			<File
+				RelativePath=".\NdisArpFilterMiniport.c"
+				>
+			</File>
+			<File
+				RelativePath=".\NdisArpFilterProtocol.c"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
+			<File
+				RelativePath=".\NdisArpFilter.h"
+				>
+			</File>
+			<File
+				RelativePath=".\NdisArpFilterIoCtls.h"
+				>
+			</File>
+			<File
+				RelativePath=".\NdisArpFilterMiniport.h"
+				>
+			</File>
+			<File
+				RelativePath=".\NdisArpFilterProtocol.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Build Files"
+			>
+			<File
+				RelativePath=".\MAKEFILE"
+				>
+			</File>
+			<File
+				RelativePath=".\SOURCES"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Inf Files"
+			>
+			<File
+				RelativePath=".\NdisArpFilter.inf"
+				>
+			</File>
+			<File
+				RelativePath=".\NdisArpFilterMiniport.inf"
+				>
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

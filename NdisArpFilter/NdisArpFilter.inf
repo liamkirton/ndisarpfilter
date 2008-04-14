@@ -1,0 +1,123 @@
+; --------------------------------------------------------------------------------
+; NdisArpFilter
+; Copyright ©2007 Liam Kirton <liam@int3.ws>
+;
+; NdisArpFilter.inf
+; Created: 03/07/2007
+; --------------------------------------------------------------------------------
+
+; --------------------------------------------------------------------------------
+[Version]
+; --------------------------------------------------------------------------------
+
+Signature = "$Windows NT$"
+Class = NetService
+ClassGUID = {4D36E974-E325-11CE-BFC1-08002BE10318}
+Provider = %LiamKirton%
+DriverVer = 07/03/2007,0.1.1.0
+
+; --------------------------------------------------------------------------------
+[Manufacturer]
+; --------------------------------------------------------------------------------
+
+%LiamKirton% = LiamKirton
+
+; --------------------------------------------------------------------------------
+[ControlFlags]
+; --------------------------------------------------------------------------------
+
+; --------------------------------------------------------------------------------
+[LiamKirton]
+; --------------------------------------------------------------------------------
+
+%NdisArpFilter_Desc% = NdisArpFilter.ndi, NdisArpFilterMiniport
+
+; --------------------------------------------------------------------------------
+[NdisArpFilter.ndi]
+; --------------------------------------------------------------------------------
+
+AddReg = NdisArpFilter.ndi.AddReg, NdisArpFilter.AddReg
+Characteristics = 0x4410 ; NCF_FILTER | NCF_NDIS_PROTOCOL
+CopyFiles = NdisArpFilter.Files.Sys
+CopyInf = NdisArpFilterMiniport.inf
+
+; --------------------------------------------------------------------------------
+[NdisArpFilter.ndi.Remove]
+; --------------------------------------------------------------------------------
+
+DelFiles = NdisArpFilter.Files.Sys
+
+; --------------------------------------------------------------------------------
+[NdisArpFilter.ndi.Services]
+; --------------------------------------------------------------------------------
+
+AddService = NdisArpFilter,, NdisArpFilter.AddService
+
+; --------------------------------------------------------------------------------
+[NdisArpFilter.AddService]
+; --------------------------------------------------------------------------------
+
+DisplayName = %NdisArpFilterService_Desc%
+ServiceType = 1 ; SERVICE_KERNEL_DRIVER
+StartType = 3 ; SERVICE_DEMAND_START
+ErrorControl = 1 ; SERVICE_ERROR_NORMAL
+ServiceBinary = %12%\NdisArpFilter.sys ; %windir%\System32\Drivers
+AddReg = NdisArpFilter.AddService.AddReg
+
+; --------------------------------------------------------------------------------
+[NdisArpFilter.AddService.AddReg]
+; --------------------------------------------------------------------------------
+
+; --------------------------------------------------------------------------------
+[SourceDisksNames]
+; --------------------------------------------------------------------------------
+
+1=%DiskDescriProtocolion%,"",,objchk_wlh_x86\i386
+
+; --------------------------------------------------------------------------------
+[SourceDisksFiles]
+; --------------------------------------------------------------------------------
+
+NdisArpFilter.sys=1
+
+; --------------------------------------------------------------------------------
+[DestinationDirs]
+; --------------------------------------------------------------------------------
+
+DefaultDestDir = 12 ; %windir%\System32\Drivers
+NdisArpFilter.Files.Sys = 12 ; %windir%\System32\Drivers
+
+; --------------------------------------------------------------------------------
+[NdisArpFilter.Files.Sys]
+; --------------------------------------------------------------------------------
+
+NdisArpFilter.sys,,,2
+
+; --------------------------------------------------------------------------------
+[NdisArpFilter.ndi.AddReg]
+; --------------------------------------------------------------------------------
+
+HKR, Ndi, HelProtocolext, , %NdisArpFilter_Help%
+HKR, Ndi, FilterClass, , failover
+HKR, Ndi, FilterDeviceInfId, , NdisArpFilterMiniport
+HKR, Ndi, Service, , NdisArpFilter
+HKR, Ndi\Interfaces, UpperRange, , noupper
+HKR, Ndi\Interfaces, LowerRange, , nolower
+HKR, Ndi\Interfaces, FilterMediaTypes, , "ethernet"
+
+; --------------------------------------------------------------------------------
+[NdisArpFilter.AddReg]
+; --------------------------------------------------------------------------------
+
+HKR, Parameters, Param1, 0, 4
+
+; --------------------------------------------------------------------------------
+[Strings]
+; --------------------------------------------------------------------------------
+
+LiamKirton = "Liam Kirton"
+DiskDescriProtocolion = "NdisArpFilter Driver"
+
+NdisArpFilter_Desc = "NdisArpFilter Driver"
+NdisArpFilter_Help = "NdisArpFilter Driver"
+NdisArpFilterService_Desc = "NdisArpFilter Service"
